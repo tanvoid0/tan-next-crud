@@ -1,0 +1,41 @@
+{
+  "name": "@tan/next-crud",
+  "version": "1.0.0",
+  "description": "A nextjs package that helps to reduce boilerplate code for building CRUD API",
+  "main": "dist/index.js",
+  "module": "src/index.ts",
+  "types": "src/index.d.ts",
+  "license": "MIT",
+  "author": "Tanveer Hoque",
+  "scripts": {
+    "build": "tsc && cp src/index.d.ts dist/",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanvoid0/@tan/next-crud"
+  },
+  "keywords": [
+    "nextjs",
+    "crud",
+    "mongoose",
+    "typescript",
+    "javascript"
+  ],
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/next": "^9.0.0",
+    "axios": "^1.7.2",
+    "i": "^0.3.7",
+    "mongoose": "^8.4.1",
+    "mongoose-paginate-v2": "^1.8.2",
+    "npm": "^10.8.1"
+  }
+}

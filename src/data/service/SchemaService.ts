@@ -14,7 +14,7 @@ export interface UpdateMongoModel {
   id: string;
 }
 
-class SchemaService<Entity extends MongoModel, NewEntity extends NewMongoModel, UpdateEntity extends UpdateMongoModel> extends SingletonService<SchemaService<Entity, NewEntity, UpdateEntity>> {
+export class SchemaService<Entity extends MongoModel, NewEntity extends NewMongoModel, UpdateEntity extends UpdateMongoModel> extends SingletonService<SchemaService<Entity, NewEntity, UpdateEntity>> {
   readonly name: string;
   model: PaginateModel<Entity>;
   

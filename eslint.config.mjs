@@ -5,4 +5,10 @@ export default [{
         "no-duplicate-imports": "warn",
         "object-curly-spacing": ["warn", "always"],
     },
+    overrides: {
+        "files": ["tests/**/*"],
+        "env": {
+            "jest": true
+        }
+    }
 }];

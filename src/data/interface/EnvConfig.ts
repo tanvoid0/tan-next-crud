@@ -1,6 +1,6 @@
-type EnvKey<T> = { [key in keyof T]: string };
+export type EnvKey<T> = { [key in keyof T]: string };
 
-interface BaseEnvConfig {
+export interface BaseEnvConfig {
   IS_PRODUCTION: boolean;
   ENVIRONMENT: string;
   MONGO_URI: string;
@@ -16,7 +16,7 @@ export const ReadEnv = <T extends BaseEnvConfig>(key: keyof T): string => {
   return value;
 }
 
-const ENVIRONMENT = ReadEnv('ENVIRONMENT') == 'production' ? "production" : "development" as string;
+export const ENVIRONMENT = ReadEnv('ENVIRONMENT') == 'production' ? "production" : "development" as string;
 export const env: BaseEnvConfig = {
   ENVIRONMENT: ENVIRONMENT,
   IS_PRODUCTION: ENVIRONMENT === 'production',

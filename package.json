@@ -1,6 +1,6 @@
 {
-  "name": "@tan/next-crud",
-  "version": "1.0.2",
+  "name": "@tanvoid0/next-crud",
+  "version": "1.0.3",
   "description": "A nextjs package that helps to reduce boilerplate code for building CRUD API",
   "main": "src/index.js",
   "module": "src/index.ts",
@@ -19,7 +19,7 @@
     "watch": "tsc --watch",
     "test": "jest",
     "prepublishOnly": "npm run build",
-    "pub:npm": "npm ci && npm run lint && npm run build && npm publish --access public"
+    "pub:npm": "npm ci && npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",

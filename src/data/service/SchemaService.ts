@@ -25,7 +25,7 @@ class SchemaService<Entity extends MongoModel, NewEntity extends NewMongoModel, 
   }
   
   protected build(definition?: SchemaDefinition): PaginateModel<Entity>{
-    const MongoSchema: Schema = new Schema<MongoModel>(definition);
+    const MongoSchema: Schema = new Schema<Entity>(definition);
     
     if (models[this.name]) {
       deleteModel(this.name);

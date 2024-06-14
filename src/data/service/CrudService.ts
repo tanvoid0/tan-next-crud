@@ -2,6 +2,7 @@ import mongoose, {FilterQuery, QueryOptions, UpdateQuery} from "mongoose";
 import SingletonService from "@tan/data/service/SingletonService";
 import DataSeederService from "@tan/data/service/DataSeederService";
 import {SeederOptions} from "@tan/data/interface/CommonInterfaces";
+import Exception from "@tan/data/interface/Exception";
 
 class CrudService<Entity, NewEntity, UpdateEntity extends UpdateQuery<Entity>> extends SingletonService<CrudService<Entity, NewEntity, UpdateEntity>> {
   readonly name: string;

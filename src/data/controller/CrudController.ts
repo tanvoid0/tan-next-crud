@@ -2,7 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {QueryOptions, UpdateQuery} from "mongoose";
 import SingletonService from "@tan/data/service/SingletonService";
 import CrudService from "@tan/data/service/CrudService";
-import {pageOptions, Params} from "@tan/data/interface/CommonInterfaces";
+import {PageOptions, Params} from "@tan/data/interface/CommonInterfaces";
 
 class CrudController<Entity, NewEntity, UpdateEntity extends UpdateQuery<Entity>> extends SingletonService<CrudController<Entity, NewEntity, UpdateEntity>> {
   service: CrudService<Entity, NewEntity, UpdateEntity>;
@@ -14,7 +14,7 @@ class CrudController<Entity, NewEntity, UpdateEntity extends UpdateQuery<Entity>
   
   async findAll(req: NextRequest): Promise<NextResponse> {
     try {
-      const results = await this.service.findAll({ page: pageOptions(req) });
+      const results = await this.service.findAll({ page: PageOptions(req) });
       return NextResponse.json(results);
     } catch (error) {
       console.error("Unexpected error", error);

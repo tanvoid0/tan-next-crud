@@ -27,7 +27,7 @@ export interface QueryOptions<Entity> {
   page?: Page,
 }
 
-export const pageOptions = (req: NextRequest) => {
+export const PageOptions = (req: NextRequest) => {
   const page = req.nextUrl.searchParams.get("page");
   const limit = req.nextUrl.searchParams.get("limit");
   return {

@@ -7,15 +7,23 @@
   "types": "src/index.d.ts",
   "license": "MIT",
   "author": "Tanveer Hoque",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/tanvoid0/tan-next-crud/issues"
+  },
+  "homepage": "https://github.com/tanvoid0/tan-next-crud#readme",
   "scripts": {
     "build": "tsc && cp src/index.d.ts dist/index.js",
+    "lint": "eslint ./src --fix",
+    "lint:migrate": "npx @eslint/migrate-config .eslintrc.json",
     "watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "pub:npm": "npm ci && npm run lint && npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tanvoid0/@tan/next-crud"
+    "url": "git+https://github.com/tanvoid0/tan-next-crud.git"
   },
   "keywords": [
     "nextjs",
@@ -26,16 +34,20 @@
   ],
   "devDependencies": {
     "@types/mongoose": "^5.11.97",
+    "@types/next": "^9.0.0",
     "@types/node": "^20.14.2",
+    "eslint": "^9.5.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@types/next": "^9.0.0",
     "axios": "^1.7.2",
     "i": "^0.3.7",
     "mongoose": "^8.4.1",
     "mongoose-paginate-v2": "^1.8.2",
     "npm": "^10.8.1"
+  },
+  "lint-staged": {
+    "./src/*.ts": "eslint --cache --fix"
   }
 }

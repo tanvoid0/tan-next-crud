@@ -7,5 +7,5 @@ dist/
 *.js
 
 # Except for index.d.ts
-!index.d.ts
+#!index.d.ts
 /tsconfig.tsbuildinfo

@@ -7,7 +7,7 @@ interface BaseEnvConfig {
 }
 
 
-function getConfig<T extends BaseEnvConfig>(key: keyof T): string {
+export const ReadEnv = <T extends BaseEnvConfig>(key: keyof T): string => {
   const value = process.env[key as string];
   
   if (!value) {
@@ -16,9 +16,9 @@ function getConfig<T extends BaseEnvConfig>(key: keyof T): string {
   return value;
 }
 
-const ENVIRONMENT = getConfig('ENVIRONMENT') == 'production' ? "production" : "development" as string;
+const ENVIRONMENT = ReadEnv('ENVIRONMENT') == 'production' ? "production" : "development" as string;
 export const env: BaseEnvConfig = {
   ENVIRONMENT: ENVIRONMENT,
   IS_PRODUCTION: ENVIRONMENT === 'production',
-  MONGO_URI: getConfig('MONGO_URI') as string
+  MONGO_URI: ReadEnv('MONGO_URI') as string
 };

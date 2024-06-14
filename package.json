@@ -1,6 +1,6 @@
 {
   "name": "@tanvoid0/next-crud",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A nextjs package that helps to reduce boilerplate code for building CRUD API",
   "main": "src/index.js",
   "module": "src/index.ts",

@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import mongoose from "mongoose";
+import {SeederOptions} from "@tan/data/interface/CommonInterfaces";
 
 class DatabaseSeederService<Entity> {
   name: string;

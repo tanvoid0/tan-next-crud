@@ -2,3 +2,10 @@ node_modules/
 dist/
 .env
 .idea/*
+# Ignore all .d.ts files
+*.d.ts
+*.js
+
+# Except for index.d.ts
+!index.d.ts
+/tsconfig.tsbuildinfo

@@ -1,3 +1,12 @@
+type EnvKey<T> = { [key in keyof T]: string };
+
+interface BaseEnvConfig {
+  IS_PRODUCTION: boolean;
+  ENVIRONMENT: string;
+  MONGO_URI: string;
+}
+
+
 function getConfig<T extends BaseEnvConfig>(key: keyof T): string {
   const value = process.env[key as string];
   

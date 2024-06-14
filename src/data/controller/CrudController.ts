@@ -1,8 +1,8 @@
 import {NextRequest, NextResponse} from "next/server";
-import {UpdateQuery} from "mongoose";
+import {QueryOptions, UpdateQuery} from "mongoose";
 import SingletonService from "@tan/data/service/SingletonService";
 import CrudService from "@tan/data/service/CrudService";
-import {pageOptions} from "@tan/data/interface/global";
+import {pageOptions, Params} from "@tan/data/interface/CommonInterfaces";
 
 class CrudController<Entity, NewEntity, UpdateEntity extends UpdateQuery<Entity>> extends SingletonService<CrudController<Entity, NewEntity, UpdateEntity>> {
   service: CrudService<Entity, NewEntity, UpdateEntity>;
